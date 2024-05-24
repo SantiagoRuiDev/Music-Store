@@ -1,0 +1,18 @@
+<section class="grid md:grid-cols-3 gap-4 w-11/12 mx-auto my-2">
+
+    @for (instrument of instruments; track instrument.name){
+        <div class="grid rounded-lg gap-2 bg-zinc-800 p-2 text-white">
+            <img [src]="instrument.image" [alt]="instrument.name" class="h-64 w-full object-cover object-center rounded-lg">
+            <h1 class="font-bold text-xl">{{instrument.name}}</h1>
+            <div class="grid gap-2 grid-cols-3">
+                <h2 class="col-span-2">{{instrument.stock}} Unidades Disponibles</h2>
+                <h2 class="text-right">${{instrument.price}}</h2>
+            </div>
+            <app-input-number [max]="instrument.stock" [(quantity)]="instrument.quantity" (quantityChange)="listenChanges($event)"></app-input-number>
+            @if (instrument.quantity > 0){
+                <button type="button" (click)="addItemToCart(instrument)" class="bg-green-500 p-2 text-white text-center font-bold rounded-md">Agregar al carrito</button>
+            }
+        </div>
+    }
+
+</section>

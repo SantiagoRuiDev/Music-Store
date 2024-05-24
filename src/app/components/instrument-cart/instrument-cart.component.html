@@ -1,0 +1,63 @@
+<div class="grid justify-end relative h-32 items-center z-0">
+    <button class="h-12 w-12 relative" (click)="openCartModal()">
+        <img src="../../../assets/Cart.svg" alt="Cart Icon" class="h-12 w-12">
+        <span
+            class="absolute bg-red-600 rounded-full h-6 w-6 items-center grid -left-2 -top-1 text-sm">{{cart.length}}</span>
+    </button>
+
+
+    <div class="bg-zinc-900 p-4 -bottom-32 absolute rounded-lg w-full z-10 h-36 overflow-y-scroll"  [ngClass]="{'hidden': !cartModal}">
+        <table class="w-full">
+            <thead class="text-left">
+                <th>Imagen</th>
+                <th>Item</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+                <th></th>
+            </thead>
+            @for(item of cart; track item.name){
+            <tbody>
+                <td class="p-2">
+                    <img [src]="item.image" [alt]="item.name" class="rounded-md h-24 w-full object-cover object-center">
+                </td>
+                <td>{{item.name}}</td>
+                <td>${{item.price}}</td>
+                <td>{{item.quantity}}</td>
+                <td>${{item.price * item.quantity}}</td>
+                <td>
+                    <button (click)="deleteFromCart(item)" class="bg-red-600 p-2 text-center text-white font-bold text-xl mx-auto rounded-md">X</button>
+                </td>
+            </tbody>
+            } @empty {
+            <tbody>
+                <h1>No hay items en el carrito : (</h1>
+            </tbody>
+            }
+        </table>
+    </div>
+</div>
+
+<style>
+
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    background-color: rgb(24 24 27);
+	width: 2px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #818181;
+}
+
+</style>

@@ -1,0 +1,5 @@
+<div class="grid grid-cols-3 gap-2">
+    <button class="bg-red-600 font-bold text-center rounded-md p-2" (click)="decrementQuantity()">-</button>
+    <input type="number" (change)="onChangeQuantity()" [(ngModel)]="quantity" name="quantity" id="quantity" class="bg-transparent p-2 rounded-md border-2 border-gray-200 text-gray-200">
+    <button class="bg-green-600 font-bold text-center rounded-md p-2" (click)="incrementQuantity()">+</button>
+</div>
