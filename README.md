@@ -4,7 +4,6 @@
 
 # Music Store
 
-*Santiago Rui; 46812517; usuariosanti7a0@gmail.com; Tandil*
 
 La tematica elegida fue la de replicar algo parecido al proyecto inicial de "Brewery" pero con instrumentos musicales, consumiendo una API, desarrollada con datos mock en MockAPI.
 
@@ -12,6 +11,7 @@ Cuenta con todos los puntos mencionados como requisitos de entrega, Ruteo, Compo
 
 El funcionamiento es muy sencillo, lista los elementos disponibles, permite incrementar o decrementar la cantidad y añadirlos al carrito, luego en la esquina derecha puede cliquearse y se podra ver un desplegable del carrito del cual se podran eliminar los items.
 
+Al contrario de lo enseñado en las clases, decidi obtar por Tailwind como Framework de CSS, ya que no contaba con Bootstrap instalado de 0 y era mejor opcion para mi Tailwind.
 
 ## Server de Desarrollo.
 
